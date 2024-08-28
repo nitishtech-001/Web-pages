@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+img{
+    display: block;
+    width:100%;
+    height: auto;
+    border:5px double gray;
+    border-radius: 50%;
+}
+.nowrap{
+    white-space: nowrap;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nunito',sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    height: 100vh;
+}
+main{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    background-image: radial-gradient(white,blue);
+}
+
+/* Images */
+.card{
+    scroll-margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    width: min(100%,350px);
+    height: auto;
+    background-color: rgba(189, 183, 107, 0.473);
+    border: 2px solid black;
+    border-radius: 15px;
+    padding:0.5rem 1rem;
+    align-items: center;
+}
+.card figcaption{
+    font-size: 2rem;
+    text-align: center;
+}
+/* heading  */
+header,footer{
+    position: sticky;
+    background-color: #333;
+    color: whitesmoke;
+}
+header{
+    top:0;
+}
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(122, 139, 146);
+    color: rgba(249, 249, 249, 0.767);
+    border-bottom: 2px solid black;
+    padding: 0.5rem;
+    
+}
+nav a , nav a:visited {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+a:hover,a:focus{
+    font-size: 2rem;
+    background-color: hsla(0, 0%, 20%, 0.321)  ;
+    color: rgba(45, 199, 233, 0.9);
+}
+
+/* Footer */
+footer{
+    font-size: 1.4rem;
+    bottom: 0;
+}
+/* SMALL */
+@media screen and (min-width:576px){
+    main{
+        justify-content: center;
+        flex-flow: row wrap;
+        padding: 1rem;
+    }
+    .card{
+        width: min(100%,400px);
+    }
+    .card:last-child{
+        order: -1;
+    }
+}
+/* MEDIUM */
+@media screen and (min-width:768px){
+   nav{
+        display: none;
+   }
+   .card{
+    width: min(100%,325px);
+   }
+   .card figure{
+        display: flex;
+        flex-direction: column-reverse;
+   }
+   .card p{
+        margin-top: 1rem;
+   }
+}
+/* LARGE*/
+@media screen and (min-width:992px){
+    .card{
+        width: min(100%.420px);
+    }
+    .card:nth-child(2){
+        order: -1;
+    }
+}
+
+/* EXTRA -LARGE */
+@media screen and (min-width: 1200px) {
+    .card {
+      /* Remove calc() - min() supports math! */
+      width: min(33% - 1rem, 500px);
+    }
+}
+/* Mobile landscape */
+@media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
+    h1 {
+      font-size: 1.5rem;
+    }
+    nav {
+      display: none;
+    }
+  
+    main {
+      flex-flow: row nowrap;
+      justify-content: space-evenly;
+      gap: 0.2rem;
+      align-items: stretch;
+    }
+  
+    .card {
+      /* Remove calc() - min() supports math! */
+      width: min(33% - 0.25rem, 200px);
+      /* padding: 0;
+      min-width: 60px;
+      height: 100%; */
+    }
+  
+    .card figcaption,
+    .card p {
+      font-size: 1.25rem;
+    }
+}
+  
